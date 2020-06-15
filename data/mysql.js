@@ -6,6 +6,8 @@ var pool = require('../config/pool.js')
 
 var conn = mysql.createPool(pool({}, config))
 
+var json = require('./json.js')
+
 var excSQL = {
   add: function (req, res, next) {
     conn.getConnection(function (err, connection) {
